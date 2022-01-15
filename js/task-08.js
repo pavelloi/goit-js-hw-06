@@ -9,9 +9,9 @@ function formSubmit(event) {
     const email = formElements.email.value;
     const password = formElements.password.value;
     const formData = { email, password };
-    
-    if (email.value === "" || password.value === "") {
-        alert('All fields should be filled by you');
+    // убрал .value c email и password ниже и alert заработал (я же value их віше указал (facepalm)
+    if (email === "" || password === "") {
+        alert("All fields should be filled by you");
     } else {
         console.log(formData);
     }
