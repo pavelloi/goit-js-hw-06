@@ -16,20 +16,13 @@ const images = [
 const gallery = document.querySelector('.gallery')
 
 const galleryItems = images
-  .map(item => {
-    const pictureItem = document.createElement('li');
-    pictureItem.setAttribute('class', 'gallery-item');
-        pictureItem.insertAdjacentHTML(
-            'beforeend',
-            `<img src="${item.url}" alt="${item.alt}" width="250">`,
-        );
-        
-
-        return pictureItem;
-  });
-    console.log(galleryItems)
-
-gallery.append(...galleryItems);
+  .map(item =>
+    `<li class="gallery-item"><img src="${item.url}" alt="${item.alt}" width="250"></li>`)
+  // pictureItem.setAttribute('class', 'gallery-item');
+  .join('');
+  
+gallery.insertAdjacentHTML('beforeend', galleryItems);
+// gallery.append(galleryItems);
      
 gallery.style.display = "flex";
 gallery.style.listStyle = "none";
